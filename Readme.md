@@ -56,25 +56,26 @@ random_search.fit(X_train_resampled, y_train_resampled)
 best_model = random_search.best_estimator_
 print("Best Parameters:", random_search.best_params_)
 ```
+
 ## 📊 Results
 
-### 🔢 Confusion Matrix
+### 🔢 1. Confusion Matrix
 | Actual / Predicted | Predicted: 0 (Legit) | Predicted: 1 (Fraud) |
 | ------------------ | -------------------- | -------------------- |
 | **Actual: 0**      | 56864                | 13                   |
 | **Actual: 1**      | 17                   | 81                   |
 
-### 🧾 Classification Report
+### 🧾 2. Classification Report
               precision    recall  f1-score   support
 
            0       1.00      1.00      1.00     56864
            1       0.75      0.82      0.78        98
 
     accuracy                           1.00     56962
-   macro avg       0.87      0.91      0.89     56962
-weighted avg       1.00      1.00      1.00     56962
+    macro avg       0.87      0.91      0.89     56962
+    weighted avg       1.00      1.00      1.00     56962
 
-### 📌 Interpretation
+### 📌 3. Interpretation
 - Recall (fraud) = 0.82 → Caught 82% of all actual frauds
 - Precision (fraud) = 0.75 → 75% of predicted frauds were correct
 - F1-Score (fraud) = 0.78 → Balanced measure of fraud detection
@@ -86,3 +87,5 @@ weighted avg       1.00      1.00      1.00     56962
 - Use more iterations (n_iter > 1) in RandomizedSearchCV
 - Experiment with other classifiers like XGBoost or LightGBM
 - Perform feature selection to simplify model and reduce overfitting
+
+  
